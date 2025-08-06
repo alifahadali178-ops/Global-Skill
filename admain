@@ -1,0 +1,24 @@
+<!-- index.html میں یہ کوڈ شامل کریں -->
+<div id="login-section">
+  <h3>ایڈمن لاگ ان</h3>
+  <input type="text" id="username" placeholder="یوزرنیم">
+  <input type="password" id="password" placeholder="پاسورڈ">
+  <button onclick="checkLogin()">لاگ ان</button>
+</div>
+
+<div id="dashboard" style="display:none;">
+  <!-- یہاں آپ کا ڈیشبورڈ ہوگا -->
+  <h2>خوش آمدید فہد علی!</h2>
+</div>
+
+<script>
+function checkLogin() {
+  if(document.getElementById('username').value === "fahad" && 
+     document.getElementById('password').value === "12345") {
+    document.getElementById('login-section').style.display = "none";
+    document.getElementById('dashboard').style.display = "block";
+  } else {
+    alert("غلط یوزرنیم یا پاسورڈ!");
+  }
+}
+</script>
