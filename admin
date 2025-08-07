@@ -1,0 +1,17 @@
+function buyCourse(courseId) {
+  const course = courses.find(c => c.id === courseId);
+  const message = میں ${course.title} کورس خریدنا چاہتا ہوں (قیمت: ${course.price} روپے);
+  
+  // EasyPaisa/JazzCash
+  const easypaisaLink = https://wa.me/923001234567?text=${encodeURIComponent(message)};
+  
+  // PayPal
+  const paypalLink = https://www.paypal.com/paypalme/fahadali/${course.price};
+  
+  // صارف کو اختیار دیں
+  if(confirm("EasyPaisa یا PayPal سے ادائیگی کریں؟")) {
+    window.open(paypalLink);
+  } else {
+    window.open(easypaisaLink);
+  }
+}
